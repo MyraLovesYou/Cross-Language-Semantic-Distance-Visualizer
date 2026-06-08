@@ -1,4 +1,5 @@
 from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
 
 model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
 
@@ -18,7 +19,7 @@ embeddings1 = model.encode(english)
 embeddings2 = model.encode(japanese)
 
 # Compute cosine similarities
-similarities = model.similarity(embeddings1, embeddings2)
+similarities = cosine_similarity(embeddings1, embeddings2)
 
 for idx_i, sentence1 in enumerate(english):
     print(sentence1)

@@ -15,6 +15,14 @@ japanese = [
     "ご確認よろしくお願いします",
 ]
 
+sentences = [
+    "The cat is on the table",
+    "It's a piece of cake.",
+    "Could you please confirm this?",
+    "猫はテーブルの上にいます",
+    "朝飯前です",
+    "ご確認よろしくお願いします",
+]
 embeddings1 = model.encode(english)
 embeddings2 = model.encode(japanese)
 

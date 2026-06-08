@@ -7,12 +7,14 @@ english = [
     "The cat is on the table",
     "It's a piece of cake.",
     "Could you please confirm this?",
+    "I study once in a blue moon.",
 ]
 
 japanese = [
-    "猫はテーブルの上にいます",
-    "朝飯前です",
-    "ご確認よろしくお願いします",
+    "猫はテーブルの上にいます。",
+    "朝飯前です。",
+    "ご確認よろしくお願いします？",
+    "めったに勉強しない。",
 ]
 
 sentences = [

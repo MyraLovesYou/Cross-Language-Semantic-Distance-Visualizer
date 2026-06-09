@@ -2,4 +2,5 @@ sentence-transformers
 pandas
 scikit-learn
 python-dotenv
-huggingface_hub             
+huggingface_hub
+umap-learn             

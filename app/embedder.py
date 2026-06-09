@@ -10,26 +10,18 @@ english = [
     "The cat is on the table",
     "It's a piece of cake.",
     "Could you please confirm this?",
-    "I study once in a blue moon.",
-    "The frog in the well doesn't know about the vast ocean",
+    "Kill two birds with one stone.",
+    "Doing the homework was a piece of cake",
 ]
 
 japanese = [
     "猫はテーブルの上にいます。",
     "朝飯前です。",
     "ご確認よろしくお願いします？",
-    "めったに勉強しない。",
-    "虎穴に入らずんば虎子を得ず",
+    "一石二鳥 ",
+    "宿題をするのは朝飯前だった",
 ]
 
-sentences = [
-    "The cat is on the table",
-    "It's a piece of cake.",
-    "Could you please confirm this?",
-    "猫はテーブルの上にいます",
-    "朝飯前です",
-    "ご確認よろしくお願いします",
-]
 embeddings1 = model.encode(english)
 embeddings2 = model.encode(japanese)
 

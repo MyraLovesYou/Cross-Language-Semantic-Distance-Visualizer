@@ -3,4 +3,6 @@ pandas
 scikit-learn
 python-dotenv
 huggingface_hub
-umap-learn             
+umap-learn
+streamlit
+plotly             

@@ -12,4 +12,12 @@ def init_database():
     ja_embeddings = engine.generate_embeddings(df['japanese'].tolist())
     df['similarity_scores'] = generate_similarity_matrix(en_embeddings, ja_embeddings)
     all_vectors = np.vstack([en_embeddings, ja_embeddings])
-    all_coords = compress_umap_coordinates(all_vectors)
+    coords = compress_umap_coordinates(all_vectors)
+    df['en_x'] = coords[:len(df), 0]
+    df['en_y'] = coords[:len(df), 1]
+    df['ja_x'] = coords[len(df):, 0]
+    df['ja_y'] = coords[len(df):, 1]
+    conn = sqlite3.connect("data/processed/semantic_space.db")
+    df.to_sql("translations", conn, if_exists="replace", index=True, index_label="id")
+    conn.close()
+    print("Database built.")

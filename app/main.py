@@ -25,8 +25,6 @@ def load_data_from_db():
 
 df = load_data_from_db()
 
-
-
 st.sidebar.header("Filter Options")
 categories = ["All"] + list(df['type'].unique())
 selected_category = st.sidebar.selectbox("Linguistic Category", categories)
@@ -44,7 +42,7 @@ for idx, row in filtered_df.iterrows():
         x=[row['en_x'], row['ja_x']],
         y=[row['en_y'], row['ja_y']],
         mode='lines',
-        line=dict(color='rgba(100, 116, 139, 0.4)', width=1.5), # Soft gray line
+        line=dict(color='rgba(100, 116, 139, 0.4)', width=1.5), 
         showlegend=False,
         hoverinfo='none'
     ))

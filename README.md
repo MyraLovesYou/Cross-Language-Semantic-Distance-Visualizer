@@ -9,14 +9,16 @@ Longer distance between two corresponding points means their meanings are less s
 
 </div>
 
+I've provided a database that's coordinates have already been calculated. You can see the original data for the database in [english-japanese-raw-parallel.xlsx](data/raw/english-japanese-raw-parallel.xlsx)
+
 ---
 
 ##  Features
 
 - **Automated SQLite Database:**  backend pipeline that automatically caches sentence vectors and UMAP coordinates upon first launch, eliminating redundant deep-learning computation.
 - **Multilingual Vector Alignment:** Leverages Hugging Face's `paraphrase-multilingual-MiniLM-L12-v2` transformer model to map diverse language characters into a unified mathematical space.
-- **Dimensionality Reduction:** Compresses 384-dimensional semantic properties down to a human-viewable 2D topography using UMAP while preserving relative linguistic proximity.
-- **Interactive UI Dashboard:** Built with Streamlit and Plotly to allow dynamic category filtering, structural gap analysis, and hover-triggered translation trajectory tracking.
+- **Dimensionality Reduction:** Compresses 384-dimensional vector embeddings down to a human-viewable 2D topography using UMAP while preserving relative linguistic proximity.
+- **Interactive UI Dashboard:** Built with Streamlit and Plotly to allow dynamic category filtering and structural gap analysis.
 
 ## Running on local machine
 

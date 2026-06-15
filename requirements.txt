@@ -1,7 +1,6 @@
 sentence-transformers
 pandas
 scikit-learn
-python-dotenv
 huggingface_hub
 umap-learn
 streamlit

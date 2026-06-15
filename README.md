@@ -55,6 +55,7 @@ Create a `.streamlit` directory and inside that directory make `secrets.toml`. I
 The app works only for English-Japanese paired phrases, but theoretically could work for any two language supported in [sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 ](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2). The structure of the project would need to be slightly adapted to deal with more languages.
 
 The current dataset was quickly put together and I think if a more carefully dataset of sentences was created then the results could be more useful to look at.
+Also to make a new databse the old database has to be deleted. To generate a new database the excel file has to be formated specifically with English-Japanese labels, but this can be changes to be more accepting of different types. This may be a feature I add in the future to accept excel files right in the dashboard.
 
 ## Background
 Developed as an independent undergraduate research track project exploring the intersection of Computational Linguistics and Artificial Intelligence at Purdue University.

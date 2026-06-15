@@ -1,8 +1,13 @@
 # Cross-Language-Semantic-Distance-Visualizer
 A modular data science pipeline and interactive dashboard that mathematically quantifies and visualizes "Semantic Drift" between English and Japanese parallel sentences. By mapping high-dimensional vector embeddings into a shared 2D space, this tool exposes where contextual nuances, idioms, and cultural pragmatics diverge.
 Longer distance between two corresponding points means their meanings are less similar, while closer distances signal higher similarity in meaning.
+<div align="center">
+
 ![Shows preview of project homepage](assets/preview.jpg)
+
 ### [**Try it out here!**](https://cross-language-semantice-distance-visualizer.streamlit.app/)
+
+</div>
 
 ---
 
@@ -40,12 +45,12 @@ alternatively try `python -m streamlit run main.py`
 
 **If you want to edit the provided database you will need a Hugging Face token to generate vectors**
 
-Create a `.streamlit` directory and inside that directory make `secrets.toml`. In you secrets file enter this line `HF_TOKEN = "your-token-here"` and replace with your token.
+Create a `.streamlit` directory and inside that directory make `secrets.toml`. In you secrets file enter this line `HF_TOKEN = "your-token-here"` and replace it with your token.
 
 ---
 
 ## Limitations
-The app works only for English-Japanese paired phrases, but theoretically could work for any two language supported in [sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 ](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2) the structure of the project would need to be slightly adapted to deal with more languages.
+The app works only for English-Japanese paired phrases, but theoretically could work for any two language supported in [sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 ](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2). The structure of the project would need to be slightly adapted to deal with more languages.
 
 The current dataset was quickly put together and I think if a more carefully dataset of sentences was created then the results could be more useful to look at.
 

@@ -80,7 +80,7 @@ fig.update_layout(
 col1, col2 = st.columns([3, 1])
 
 with col1:
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 with col2:
     st.write("### Data Breakdown")

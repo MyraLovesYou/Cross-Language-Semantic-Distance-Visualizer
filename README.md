@@ -28,16 +28,18 @@ I've provided a database that's coordinates have already been calculated. You ca
 
 3. Set up virtual environment
 
-`python -m venv .venv`
+```
+python -m venv .venv
 
-`# Windows command prompt
-.venv\Scripts\activate.bat`
+# Windows command prompt
+.venv\Scripts\activate.bat
 
-`# Windows PowerShell
-.venv\Scripts\Activate.ps1`
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
 
-`# macOS and Linux
-source .venv/bin/activate`
+# macOS and Linux
+source .venv/bin/activate
+```
 
 4. Run the command `pip install -r requirements.txt` in the terminal
 

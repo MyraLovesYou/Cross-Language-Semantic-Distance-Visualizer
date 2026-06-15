@@ -86,5 +86,5 @@ with col2:
     st.write("### Data Breakdown")
     st.write(f"Showing **{len(filtered_df)}** parallel phrase pairs.")
     st.write("#### Highest Similarity in View")
-    high_drift = filtered_df.sort_values(by='similarity_scores', ascending=False)[['english', 'similarity_scores']].head(5)
-    st.dataframe(high_drift, hide_index=True)
+    high_similarity = filtered_df.sort_values(by='similarity_scores', ascending=False)[['english', 'similarity_scores', 'japanese']].head(5)
+    st.dataframe(high_similarity, hide_index=True)

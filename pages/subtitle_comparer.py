@@ -42,6 +42,14 @@ if en_file and ja_file:
         st.success(True, f"Successfully aligned {len(df_subs)} dialogue blocks by timestamp proximity!")
         with st.spinner("Analyzing similarity of files..."):
             engine = VectorEngine()
-            
+            en_embeddings = engine.generate_embeddings(df_subs['english'].tolist())
+            ja_embeddings = engine.generate_embeddings(df_subs['japanese'].tolist())
+            df_subs['similarity_score'] = generate_similarity_matrix(en_embeddings, ja_embeddings)
+
+        avg_similarity = df_subs['similarity_score'].mean()
+        st.metric(label="Overall Subtitle Translation Alignment Metric", value=f"{100 * avg_similarity:.1f}% Match")
+        
+        st.dataframe(df_subs.sort_values(by="similarity_score", ascending=False))
+
     else:
         st.error("Could not automatically match subtitle together. Make sure to use two parallel srts from the same media.")

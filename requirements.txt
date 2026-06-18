@@ -5,3 +5,4 @@ huggingface_hub
 umap-learn
 streamlit
 plotly             
+pysrt

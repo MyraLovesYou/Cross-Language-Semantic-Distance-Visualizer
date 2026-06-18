@@ -3,7 +3,7 @@ A modular data science pipeline and interactive dashboard that mathematically qu
 Longer distance between two corresponding points means their meanings are less similar, while closer distances signal higher similarity in meaning.
 <div align="center">
 
-  <img src="assets/preview.jpg" width="60%">
+  <img src="assets/preview.jpg" width="70%">
   
 ### [**Try it out here!**](https://cross-language-semantice-distance-visualizer.streamlit.app/)
 
@@ -14,7 +14,7 @@ I've provided a database that's coordinates have already been calculated. You ca
 
 A subtitle analysis page has been made to compare how accurate a subbed piece of media between English and Japanese. Upload two srts to compare. The median similarity is shown as well as a detailed break down of each sub's similarity.
 <div align="center">
-  <img src="assets/subtitle_preview.jpg" width="60%">
+  <img src="assets/subtitle_preview.jpg" width="70%">
 </div>
 
 I've provided sample srts for the 7th episode of Carole & Tuesday in `data\raw`

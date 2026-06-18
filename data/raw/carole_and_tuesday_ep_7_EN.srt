@@ -4,11 +4,7 @@
 
 2
 00:00:16,599 --> 00:00:17,642
-<i>Yes,</i>
-
-3
-00:00:17,809 --> 00:00:20,520
-<i>it would go down in the history of Mars</i>
+<i>Yes, it would go down in the history of Mars</i>
 
 4
 00:00:20,895 --> 00:00:22,188

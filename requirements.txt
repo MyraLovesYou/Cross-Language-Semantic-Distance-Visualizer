@@ -6,3 +6,4 @@ umap-learn
 streamlit
 plotly             
 pysrt
+numpy

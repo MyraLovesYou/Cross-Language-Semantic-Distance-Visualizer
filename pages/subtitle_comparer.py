@@ -21,3 +21,27 @@ if en_file and ja_file:
 
     en_subs = pysrt.from_string(en_stream.read())
     ja_subs = pysrt.from_string(ja_stream.read())
+
+    aligned_data = []
+
+    for en_sub in en_subs:
+    
+        en_start = en_sub.start.ordinal # Timestamp converted to milliseconds
+        
+        best_match = min(ja_subs, key=lambda x: abs(x.start.ordinal - en_start))
+        
+        if abs(best_match.start.ordinal - en_start) < 2000:
+            aligned_data.append({
+                "timestamp": str(en_sub.start),
+                "english": en_sub.text,
+                "japanese": best_match.text
+            })
+    
+    df_subs = pd.DataFrame(aligned_data)
+    if not df_subs.empty:
+        st.success(True, f"Successfully aligned {len(df_subs)} dialogue blocks by timestamp proximity!")
+        with st.spinner("Analyzing similarity of files..."):
+            engine = VectorEngine()
+            
+    else:
+        st.error("Could not automatically match subtitle together. Make sure to use two parallel srts from the same media.")

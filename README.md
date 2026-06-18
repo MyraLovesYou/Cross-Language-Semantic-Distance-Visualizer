@@ -17,7 +17,7 @@ A subtitle analysis page has been made to compare how accurate a subbed piece of
   <img src="assets/subtitle_preview.jpg" width="70%">
 </div>
 
-I've provided sample srts for the 7th episode of Carole & Tuesday in `data\raw`
+I've provided sample srts for the 7th episode of Carole & Tuesday in [data/raw](data/raw)
 
 ---
 

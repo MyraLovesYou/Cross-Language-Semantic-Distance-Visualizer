@@ -4,7 +4,7 @@ import numpy as np
 import pysrt
 import io
 from src.embedder import VectorEngine
-from src.processor import generate_similarity_matrix, compress_umap_coordinatess
+from src.processor import generate_similarity_matrix, compress_umap_coordinates
 
 st.title("Subtitle Translation Analyzer")
 st.write("Please upload an English and Japanese .srt file to compare subtitles")
@@ -39,7 +39,7 @@ if en_file and ja_file:
     
     df_subs = pd.DataFrame(aligned_data)
     if not df_subs.empty:
-        st.success(True, f"Successfully aligned {len(df_subs)} dialogue blocks by timestamp proximity!")
+        st.success(f"Successfully aligned {len(df_subs)} dialogue blocks by timestamp proximity!")
         with st.spinner("Analyzing similarity of files..."):
             engine = VectorEngine()
             en_embeddings = engine.generate_embeddings(df_subs['english'].tolist())

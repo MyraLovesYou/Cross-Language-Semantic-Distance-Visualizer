@@ -58,6 +58,7 @@ if en_file and ja_file:
   
         columns_to_show = ["clean_ja", "clean_en", "similarity_score"]
         st.dataframe(df_subs[columns_to_show].sort_values(by="similarity_score", ascending=False))
+        st.write("Please keep in mind similarity is likely higher than calculated due to subtitles being misalligned due to structuring differences between the files. Try editing the srts to closer fit the timestamps together.")
 
     else:
         st.error("Could not automatically match subtitle together. Make sure to use two parallel srts from the same media.")

@@ -5,6 +5,7 @@ import pysrt
 import io
 from src.embedder import VectorEngine
 from src.processor import generate_similarity_matrix, compress_umap_coordinates
+from src.text_cleaner import clean_subtitle_text
 
 st.title("Subtitle Translation Analyzer")
 st.write("Please upload an English and Japanese .srt file to compare subtitles")
@@ -42,14 +43,21 @@ if en_file and ja_file:
         st.success(f"Successfully aligned {len(df_subs)} dialogue blocks by timestamp proximity!")
         with st.spinner("Analyzing similarity of files..."):
             engine = VectorEngine()
-            en_embeddings = engine.generate_embeddings(df_subs['english'].tolist())
-            ja_embeddings = engine.generate_embeddings(df_subs['japanese'].tolist())
+            df_subs['clean_en'] = df_subs["english"].apply(clean_subtitle_text)
+            df_subs['clean_ja'] = df_subs["japanese"].apply(clean_subtitle_text)
+            en_embeddings = engine.generate_embeddings(df_subs['clean_en'].tolist())
+            ja_embeddings = engine.generate_embeddings(df_subs['clean_ja'].tolist())
             df_subs['similarity_score'] = generate_similarity_matrix(en_embeddings, ja_embeddings)
 
         avg_similarity = df_subs['similarity_score'].mean()
-        st.metric(label="Overall Subtitle Translation Alignment Metric", value=f"{100 * avg_similarity:.1f}% Match")
-        
-        st.dataframe(df_subs.sort_values(by="similarity_score", ascending=False))
+        col3, col4 = st.columns([2,3], vertical_alignment="center")
+        with col3:
+            st.metric(label="Overall Subtitle Translation Alignment Metric", value=f"{100 * avg_similarity:.1f}% Match")
+        with col4:
+            st.progress(float(avg_similarity))
+  
+        columns_to_show = ["clean_ja", "clean_en", "similarity_score"]
+        st.dataframe(df_subs[columns_to_show].sort_values(by="similarity_score", ascending=False))
 
     else:
         st.error("Could not automatically match subtitle together. Make sure to use two parallel srts from the same media.")

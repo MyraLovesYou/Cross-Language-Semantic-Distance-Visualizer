@@ -31,7 +31,7 @@ if en_file and ja_file:
         
         best_match = min(ja_subs, key=lambda x: abs(x.start.ordinal - en_start))
         
-        if abs(best_match.start.ordinal - en_start) < 2000:
+        if abs(best_match.start.ordinal - en_start) < 400:
             aligned_data.append({
                 "timestamp": str(en_sub.start),
                 "english": en_sub.text,
